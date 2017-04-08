@@ -13,6 +13,15 @@
 	// call init function to set up scene and animate function to render scene and update render (define both functions later)
 	init();
 	animate();
+
+	// define init function to set up scene
+	function init() {
+		// create new object that serves as scene
+		scene = new THREE.Scene();
+		// set scene size
+		var WIDTH = window.innerWidth;
+		var HEIGHT = window.innerHeight;
+	}
 </script>
 </body>
 </html>
