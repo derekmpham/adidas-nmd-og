@@ -21,6 +21,12 @@
 		// set scene size
 		var WIDTH = window.innerWidth;
 		var HEIGHT = window.innerHeight;
+
+		// create new object that serves as renderer
+		renderer = new THREE.WebGLRenderer({antialias:true});
+		renderer.setSize(WIDTH, HEIGHT);
+		// append renderer to DOM via body element to create canvas inside body element that will be used to render scene
+		document.body.appendChild(renderer.domElement);
 	}
 </script>
 </body>
