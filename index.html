@@ -57,6 +57,11 @@
 		light.position.set(-100, 200, 100);
 		// add light to scene
 		scene.add(light);
+
+		// load in mesh of shoe-->hypothesis: need to do 3d scan
+
+		// add orbit control object to allow us to drag mouse across the mesh and orbit around it, as well as allow us to use the mousewheel to zoom in and out of the mesh
+		control = new THREE.OrbitControls(camera, renderer.domElement);
 	}
 </script>
 </body>
