@@ -34,6 +34,19 @@
 		camera.position.set(0, 6, 0);
 		// add camera to scene
 		scene.add(camera);
+
+		// create event listener that resizes renderer with the browser window
+		window.addEventListener('resize', function() {
+			// adjust width and height variables to width and height of window
+			var WIDTH = window.innerWidth,
+				HEIGHT = window.innerHeight;
+			// change size of renderer
+			renderer.setSize(WIDTH, HEIGHT);
+			// adjust aspect ratio
+			camera.aspect = WIDTH/HEIGHT;
+			// call updateProjectionMatrix function to update parameters
+			camera.updateProjectionMatrix();
+		});
 	}
 </script>
 </body>
