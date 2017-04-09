@@ -48,8 +48,15 @@
 			camera.updateProjectionMatrix();
 		});
 
-		// set background color of scene to light gray
-		renderer.setClearColor(0xD3D3D3, 1);
+		// set background color of scene to gray
+		renderer.setClearColor(0x808080, 1);
+
+		// create light object emitting white color
+		var light = new THREE.PointLight(0xffffff);
+		// set light's position
+		light.position.set(-100, 200, 100);
+		// add light to scene
+		scene.add(light);
 	}
 </script>
 </body>
