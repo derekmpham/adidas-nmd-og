@@ -63,7 +63,17 @@
 		scene.add(light);
 
 		// load in mesh
-
+		// create JSONLoader object to get geometry into scene
+		var loader = new THREE.JSONLoader();
+		// use callback inside loader to set material on mesh
+		loader.load("models/treehouse_logo.js",
+			function(geometry) {
+				var material = new THREE.MeshLambertMaterial({color: 0x55B663});
+				// create new mesh object with our geometry and material as parameters
+				mesh = new THREE.Mesh(geometry, material);
+				// add mesh to scene
+				scene.add(mesh);
+			});
 
 		// add orbit control object to allow us to drag mouse across the mesh and orbit around it, as well as allow us to use the mousewheel to zoom in and out of the mesh
 		controls = new THREE.OrbitControls(camera, renderer.domElement);
