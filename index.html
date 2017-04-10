@@ -63,7 +63,19 @@
 		// load in mesh of shoe-->hypothesis: need to do 3d scan
 
 		// add orbit control object to allow us to drag mouse across the mesh and orbit around it, as well as allow us to use the mousewheel to zoom in and out of the mesh
-		control = new THREE.OrbitControls(camera, renderer.domElement);
+		controls = new THREE.OrbitControls(camera, renderer.domElement);
+	}
+
+	// create animate function to redraw when the camera orbits around the mesh
+	function animate() {
+
+		// call requestAnimationFrame function to delegate redraws to browser
+		requestAnimationFrame(animate);
+
+		// render scene through camera added earlier
+		renderer.render(scene, camera);
+		// update orbit controls
+		controls.update();
 	}
 </script>
 </body>
